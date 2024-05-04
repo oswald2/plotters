@@ -669,13 +669,13 @@ mod drawing_area_tests {
                     for row in 0..=nyb {
                         for col in 0..=nxb {
                             let get_bp = |full, limit, id| {
-                                (if id == 0 {
+                                if id == 0 {
                                     0
                                 } else if id > limit {
                                     full
                                 } else {
                                     breaks[id as usize - 1]
-                                })
+                                }
                             };
 
                             let expected_u = (get_bp(1024, nxb, col), get_bp(768, nyb, row));
